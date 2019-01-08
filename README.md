@@ -1,2 +1,0 @@
-# testBotSolution
-testBotSolution
