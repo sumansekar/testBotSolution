@@ -20,9 +20,9 @@ if ($method == 'POST')
 
     $response = new \stdClass();
 
-    $response->speech = "abcd" . $Status_MSG;
+    $response->speech = "abcd" . $Status_MSG .$LanID;
 
-    $response->displayText = "abcd" . $Status_MSG;
+    $response->displayText = "abcd" . $Status_MSG .$LanID;
 
     $response->source = "webhook";
     echo json_encode($Status_MSG);
