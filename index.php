@@ -8,6 +8,7 @@ if ($method == 'POST')
     $requestBody = file_get_contents('php://input');
 	$json = json_decode($requestBody);
 	$LanID = $json->result->parameters->LanID;
+	$URL = "http://localhost:5555/invoke/Default:new_flowservice?num1=2&num2=4";
 
     
      switch ($LanID) {
