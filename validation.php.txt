@@ -2,7 +2,7 @@
 
 $method = $_SERVER['REQUEST_METHOD'];
 
-
+$method="POST";
 
 if ($method == 'POST')
 
@@ -45,7 +45,7 @@ if ($method == 'POST')
 	$password = "manage";
 	$URL="https://192.168.0.9:8999/rest/Default/new_rest/_get?num1=2&num2=4";
     
-
+$LanID="sguna002";
     switch ($LanID) {
 
         
@@ -95,12 +95,12 @@ $opts = array('https' =>
 
 //Do request
 $context = stream_context_create($opts);
-$json = file_get_contents($URL, false, $context);
+$jsonStr = file_get_contents($URL, false, $context);
 
     	
-    	$context = stream_context_create(https);
+    //	$context = stream_context_create(https);
 
-    	$jsonStr = file_get_contents($URL,false,$context);
+    //	$jsonStr = file_get_contents($URL,false,$context);
 
 	$obj = json_decode($jsonStr,true);
 
