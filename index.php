@@ -56,7 +56,7 @@ $json =json_decode($json1,true);
 	//$stdResponse="Nothing :-";
 
 $message = ($json->errormessage == "null" OR empty($json->errormessage) )?"N/A":$json->errormessage;
-$Status_MSG = " Status=".$json->value.";"." Message=".$message;
+$Status_MSG = " Status=".$json->Responses.";"." Message=".$message;
 
     $response = new \stdClass();
     $response->speech = "abcd" . $Status_MSG . $obj;
