@@ -59,8 +59,8 @@ $message = ($json->errormessage == "null" OR empty($json->errormessage) )?"N/A":
 $Status_MSG = " Status=".$json->status.";"." Message=".$message;
 
     $response = new \stdClass();
-    $response->speech = "abcd" . $Status_MSG . $LanID;
-    $response->displayText = "abcd" . $Status_MSG . $LanID;
+    $response->speech = "abcd" . $Status_MSG . $jsonStr;
+    $response->displayText = "abcd" . $Status_MSG . $jsonStr;
     $response->source = "webhook";
     echo json_encode($response);
 }
