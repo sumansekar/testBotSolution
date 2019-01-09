@@ -1,6 +1,6 @@
 <?php
 $method = $_SERVER['REQUEST_METHOD'];
-$method ='GET';
+//$method ='GET';
 //$LanID ='sguna002';
 
 if ($method == 'POST')
@@ -23,13 +23,10 @@ if ($method == 'POST')
     }
 
     $response = new \stdClass();
-
     $response->speech = "abcd" . $Status_MSG . $LanID;
-
     $response->displayText = "abcd" . $Status_MSG . $LanID;
-
     $response->source = "webhook";
-    echo json_encode($Status_MSG);
+    echo json_encode($response);
 }
 else
 {
