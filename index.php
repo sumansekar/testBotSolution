@@ -30,7 +30,7 @@ $opts = array('http' =>
 
     array(
 
-        'method'    => 'POST',
+        'method'    => 'GET',
 
         'header'    => array ('Content-type: application/json', 'Authorization: Basic '.base64_encode("$username:$password")),
 
