@@ -50,9 +50,9 @@ $jsonStr = file_get_contents($URL, false, $context);
 
 
 
-    	$obj = json_decode($jsonStr,true);
-	$json1 = $obj['Responses'];
-$json =json_decode($json1,true);
+    	$json = json_decode($jsonStr,true);
+	//$json1 = $obj['Responses'];
+//$json =json_decode($json1,true);
 	//$stdResponse="Nothing :-";
 
 $message = ($json->errormessage == "null" OR empty($json->errormessage) )?"N/A":$json->errormessage;
