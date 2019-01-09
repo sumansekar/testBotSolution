@@ -10,7 +10,7 @@ if ($method == 'POST')
 	$LanID = $json->result->parameters->LanID;
 	$username = 'Administrator';
 	$password = 'manage';
-	$URL = "http://localhost:5555/invoke/Default:new_flowservice?num1=2&num2=4";
+	$URL = "http://192.168.0.9:8055/invoke/Default:new_flowservice?num1=2&num2=4";
 
     
      switch ($LanID) {
