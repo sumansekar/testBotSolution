@@ -39,7 +39,7 @@ if ($method == 'POST')
     'http' => array(
         'header'  => ["Content-Type: application/json" , "Accept: application/json" , "Authorization: Basic " . base64_encode(($username:$password)],'method'  => 'GET')));
 
-    	$URL="http://192.168.0.9:5555/rest/Default/new_rest/_get?num1=2&num2=4";
+    	$URL="https://192.168.0.9:8999/rest/Default/new_rest/_get?num1=2&num2=4";
     	$jsonStr = file_get_contents($URL,false,$context);
 	$obj = json_decode($jsonStr,true);
 	$json1 = $obj['response'];
