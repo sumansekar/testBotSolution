@@ -33,7 +33,7 @@ $opts = array('https' =>
 
         'method'    => 'GET',
 
-        'header'    => array ('Content-type: application/json', 'Authorization: Basic '.base64_encode("$username:$password")),
+        'header'    => array ('Content-type: application/json', "Accept: application/json", 'Authorization: Basic '.base64_encode("$username:$password")),
 
        // 'content' => "some_content"
 
@@ -57,7 +57,7 @@ $jsonStr = file_get_contents($URL, false, $context);
 	//$stdResponse="Nothing :-";
 
 $message = ($json->errormessage == "null" OR empty($json->errormessage) )?"N/A":$json->errormessage;
-$Status_MSG = " Status=".$json->fileName.";"." Message=".$message;
+$Status_MSG = " Status=".$json->{'response'}.";"." Message=".$message;
 
     $response = new \stdClass();
     $response->speech = "abcd" . $Status_MSG . $obj;
