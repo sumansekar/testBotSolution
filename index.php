@@ -51,12 +51,12 @@ $jsonStr = file_get_contents($URL, false, $context);
 
 
     	$obj = json_decode($jsonStr,true);
-	$json1 = $obj['response'];
+	$json1 = $obj['Responses'];
 $json =json_decode($json1);
 	$stdResponse="Nothing :-";
-$message = '';
+
 $message = ($json->errormessage == "null" OR empty($json->errormessage) )?"N/A":$json->errormessage;
-$Status_MSG = " Status=".$json->Responses->value[0].";"." Message=".$message;
+$Status_MSG = " Status=".$json->value[0].";"." Message=".$message;
 
     $response = new \stdClass();
     $response->speech = "abcd" . $Status_MSG . $jsonStr;
