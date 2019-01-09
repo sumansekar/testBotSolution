@@ -18,7 +18,13 @@ if ($method == 'POST')
             break;
     }
 
+    $response = new \stdClass();
 
+    $response->speech = $Status_MSG;
+
+    $response->displayText = $Status_MSG;
+
+    $response->source = "webhook";
     echo json_encode($Status_MSG);
 }
 else
