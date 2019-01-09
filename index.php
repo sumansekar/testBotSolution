@@ -1,7 +1,7 @@
 <?php
 $method = $_SERVER['REQUEST_METHOD'];
-$method ='POST';
-$LanID ='sguna002';
+//$method ='POST';
+//$LanID ='sguna002';
 
 if ($method == 'POST')
 {
@@ -20,9 +20,9 @@ if ($method == 'POST')
 
     $response = new \stdClass();
 
-    $response->speech = $Status_MSG;
+    $response->speech = "abcd" . $Status_MSG;
 
-    $response->displayText = $Status_MSG;
+    $response->displayText = "abcd" . $Status_MSG;
 
     $response->source = "webhook";
     echo json_encode($Status_MSG);
