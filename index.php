@@ -34,7 +34,7 @@ $opts = array('http' =>
 
         'header'    => array ('Content-type: application/json', 'Authorization: Basic '.base64_encode("$username:$password")),
 
-        'content' => "some_content"
+       // 'content' => "some_content"
 
     )
 
@@ -56,7 +56,7 @@ $json =json_decode($json1);
 	$stdResponse="Nothing :-";
 $message = '';
 $message = ($json->errormessage == "null" OR empty($json->errormessage) )?"N/A":$json->errormessage;
-$Status_MSG = " Status=".$json->status.";"." Message=".$message;
+$Status_MSG = " Status=".$json->Responses->value[0].";"." Message=".$message;
 
     $response = new \stdClass();
     $response->speech = "abcd" . $Status_MSG . $jsonStr;
