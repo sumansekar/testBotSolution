@@ -11,7 +11,9 @@ if ($method == 'POST')
 	$username = 'Administrator';
 	$password = 'manage';
 	//$URL = "http://192.168.0.9:8055/invoke/Default:new_flowservice?num1=2&num2=4";
-	$URL = 'https://localhost:8999/rest/Default/new_rest/_get?num1=2&num2=4';
+	$URL = "http://localhost:8055/invoke/Default:new_flowservice?num1=2&num2=4";
+	//$URL = 'https://localhost:8999/rest/Default/new_rest/_get?num1=2&num2=4';
+	//https://localhost:8999/rest/Default/new_rest/_get?num1=1&num2=4
 
     
      switch ($LanID) {
@@ -27,7 +29,7 @@ if ($method == 'POST')
     }
 //HTTP options
 
-$opts = array('https' =>
+$opts = array('http' =>
 
     array(
 
@@ -57,7 +59,7 @@ $jsonStr = file_get_contents($URL, false, $context);
 	//$stdResponse="Nothing :-";
 
 $message = ($json->errormessage == "null" OR empty($json->errormessage) )?"N/A":$json->errormessage;
-$Status_MSG = " Status=".$json->{'response'}.";"." Message=".$message;
+$Status_MSG = " Status=".$json->{'response'}->{'value'}.";"." Message=".$message;
 
     $response = new \stdClass();
     $response->speech = "abcd" . $Status_MSG . $obj;
