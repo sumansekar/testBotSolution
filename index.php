@@ -27,7 +27,7 @@ if ($method == 'POST')
     }
 //HTTP options
 
-$opts = array('http' =>
+$opts = array('https' =>
 
     array(
 
