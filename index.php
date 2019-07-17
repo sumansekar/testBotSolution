@@ -28,6 +28,27 @@ if ($method == 'POST')
             $Status_MSG = "Your Cognizant  ID is not valid. Thanks";
             break;
     }
+
+	
+	
+	/*
+$URL="http://192.168.0.9:5665/rest/Default/new_restExp/_get?num1=2&num2=4";
+$context = stream_context_create(array(
+'http' => array(
+
+       'header'    => ['Content-type: application/json' , 'Accept: application/json', 'Authorization: Basic '.base64_encode("$username:$password")], 'method'    => 'POST)));
+
+$jsonStr = file_get_contents($URL, false, $context);
+$obj = json_decode($jsonStr,true);
+$Status_MSG = $obj->{'sumTotal'};
+*/
+
+
+
+  // $URL="http://192.168.0.9:5665/rest/Default/new_restExp/_get?num1=2&num2=4";
+		  //  $URL="http://192.168.0.9:5555/invoke/Default.new_restExp:_get?num1=1&num2=2"; 
+	
+	
 	
 
 
