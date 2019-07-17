@@ -1,6 +1,6 @@
 <?php
 
-$method = $_SERVER['REQUEST_METHOD'];
+//$method = $_SERVER['REQUEST_METHOD'];
 
 $method="POST";
 
@@ -46,7 +46,7 @@ if ($method == 'POST')
 	//$URL="https://192.168.0.9:5665/rest/Default/new_rest/_get?num1=2&num2=4";
 	$URL="https://192.168.0.9:5665/rest/Default/new_restExp/_get?num1=2&num2=4";
     
-$LanID="sguna002";
+/*$LanID="sguna002";
     switch ($LanID) {
 
         
@@ -69,41 +69,37 @@ $LanID="sguna002";
 
     }
 
+*/
 
 
 
-
-/*	$context = stream_context_create(array(
+	$context = stream_context_create(array(
 
     'https' => array(
-
-        //'header'  => ("Content-Type: application/json" , "Accept: application/json" , "Authorization: Basic " . base64_encode("$username:$password")),'method'  => 'POST');
-        'method'    => 'POST',
-        'header'    => array ('Content-type: application/json', 'Authorization: Basic '.base64_encode("$client_id:$client_pass")),
-        'content' => "some_content"
-
-)
-)*/
+       'header'    => ['Content-type: application/json' , 'Accept: application/json', 'Authorization: Basic '.base64_encode("$username:$password")], 'method'    => 'POST)));
+       
 
 //HTTP options
-$opts = array('https' =>
+/*$opts = array('https' =>
     array(
         'method'    => 'POST',
         'header'    => array ('Content-type: application/json', 'Authorization: Basic '.base64_encode("$username:$password")),
         'content' => "some_content"
     )
-);
+);*/
 
 //Do request
 $context = stream_context_create($opts);
 $jsonStr = file_get_contents($URL, false, $context);
-
+$obj = json_decode($jsonStr,true);
     	
     //	$context = stream_context_create(https);
 
     //	$jsonStr = file_get_contents($URL,false,$context);
 
-	$obj = json_decode($jsonStr,true);
+	
+	
+	//echo $obj;
 
 	//$json1 = $obj['response'];
 
@@ -113,12 +109,14 @@ $jsonStr = file_get_contents($URL, false, $context);
 
 	$message = '';
 
-	$message = ($obj->errormessage == "null" OR empty($obj->errormessage) )?"N/A":$obj->errormessage;
+	/*$message = ($obj->errormessage == "null" OR empty($obj->errormessage) )?"N/A":$obj->errormessage;
 
-	$Status_MSG = " Status=".$obj->status.";"." Message=".$message;
+	$Status_MSG = " Status=".$obj->status.";"." Message=".$message;*/
+	
+	$Status_MSG = $obj->{'sumTotal'};
 
  
-
+ 
     
 
     $response = new \stdClass();
