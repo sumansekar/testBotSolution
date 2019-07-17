@@ -28,7 +28,7 @@ $context = stream_context_create(array(
        'header'    => ['Content-type: application/json' , 'Accept: application/json', 'Authorization: Basic '.base64_encode("$username:$password")], 'method'    => 'POST)));
 
 $jsonStr = file_get_contents($URL, false, $context);
-$Status_MSG = "Your Cognizant ID $LanID has been validated. Thanks";
+$Status_MSG = "Your Cognizant ID $LanID/$jsonStr has been validated. Thanks";
 $obj = json_decode($jsonStr,true);
 $Status_MSG = $obj->{'sumTotal'};
             break;
