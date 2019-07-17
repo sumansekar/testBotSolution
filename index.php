@@ -20,7 +20,7 @@ if ($method == 'POST')
         
         case "sguna002":
 		    // $URL="http://192.168.0.9:5665/rest/Default/new_restExp/_get?num1=2&num2=4";
-		    $URL="http://192.168.0.9:5555/invoke/Default.new_restExp:_get?num1=1&num2=2";
+		  //  $URL="http://192.168.0.9:5555/invoke/Default.new_restExp:_get?num1=1&num2=2";
 		        $Status_MSG = "Your Cognizant ID $LanID has been validated. Thanks";
 /*$opts = array(
 'http' => array(
