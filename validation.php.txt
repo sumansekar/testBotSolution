@@ -43,7 +43,8 @@ if ($method == 'POST')
 	$username = "Administrator";
 
 	$password = "manage";
-	$URL="https://192.168.0.9:8999/rest/Default/new_rest/_get?num1=2&num2=4";
+	//$URL="https://192.168.0.9:5665/rest/Default/new_rest/_get?num1=2&num2=4";
+	$URL="https://192.168.0.9:5665/rest/Default/new_restExp/_get?num1=2&num2=4";
     
 $LanID="sguna002";
     switch ($LanID) {
@@ -104,17 +105,17 @@ $jsonStr = file_get_contents($URL, false, $context);
 
 	$obj = json_decode($jsonStr,true);
 
-	$json1 = $obj['response'];
+	//$json1 = $obj['response'];
 
-	$json =json_decode($json1);
+	//$json =json_decode($json1);
 
 	$stdResponse="Nothing :-";
 
 	$message = '';
 
-	$message = ($json->errormessage == "null" OR empty($json->errormessage) )?"N/A":$json->errormessage;
+	$message = ($obj->errormessage == "null" OR empty($obj->errormessage) )?"N/A":$obj->errormessage;
 
-	$Status_MSG = " Status=".$json->status.";"." Message=".$message;
+	$Status_MSG = " Status=".$obj->status.";"." Message=".$message;
 
  
 
