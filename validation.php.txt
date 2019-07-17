@@ -89,7 +89,7 @@ if ($method == 'POST')
 );*/
 
 //Do request
-$context = stream_context_create($opts);
+//$context = stream_context_create($opts);
 $jsonStr = file_get_contents($URL, false, $context);
 $obj = json_decode($jsonStr,true);
     	
