@@ -20,7 +20,7 @@ if ($method == 'POST')
         
         case "sguna002":
             
-            $Status_MSG = "Your Cognizant ID $LanID has been validated. Thanks";
+            //$Status_MSG = "Your Cognizant ID $LanID has been validated. Thanks";
 		     $URL="https://192.168.0.9:5665/rest/Default/new_restExp/_get?num1=2&num2=4";
 $context = stream_context_create(array(
 'https' => array(
@@ -28,6 +28,7 @@ $context = stream_context_create(array(
        'header'    => ['Content-type: application/json' , 'Accept: application/json', 'Authorization: Basic '.base64_encode("$username:$password")], 'method'    => 'POST)));
 
 $jsonStr = file_get_contents($URL, false, $context);
+$Status_MSG = "Your Cognizant ID $LanID has been validated. Thanks";
 $obj = json_decode($jsonStr,true);
 $Status_MSG = $obj->{'sumTotal'};
             break;
@@ -37,7 +38,8 @@ $Status_MSG = $obj->{'sumTotal'};
             break;
     }
 	
-/*$URL="https://192.168.0.9:5665/rest/Default/new_restExp/_get?num1=2&num2=4";
+/*
+$URL="https://192.168.0.9:5665/rest/Default/new_restExp/_get?num1=2&num2=4";
 $context = stream_context_create(array(
 'https' => array(
 
@@ -45,7 +47,8 @@ $context = stream_context_create(array(
 
 $jsonStr = file_get_contents($URL, false, $context);
 $obj = json_decode($jsonStr,true);
-$Status_MSG = $obj->{'sumTotal'};*/
+$Status_MSG = $obj->{'sumTotal'};
+*/
 
 //HTTP options
 /*
