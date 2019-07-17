@@ -11,7 +11,7 @@ if ($method == 'POST')
 	$username = 'Administrator';
 	$password = 'manage';
 	//$URL = "http://192.168.0.9:8055/invoke/Default:new_flowservice?num1=2&num2=4";
-	$URL = "http://localhost:8055/invoke/Default:new_flowservice?num1=2&num2=4";
+	//$URL = "http://localhost:8055/invoke/Default:new_flowservice?num1=2&num2=4";
 	//$URL = 'https://localhost:8999/rest/Default/new_rest/_get?num1=2&num2=4';
 	//https://localhost:8999/rest/Default/new_rest/_get?num1=1&num2=4
 
@@ -30,9 +30,9 @@ if ($method == 'POST')
     }
 	
 /*
-$URL="https://192.168.0.9:5665/rest/Default/new_restExp/_get?num1=2&num2=4";
+$URL="http://192.168.0.9:5665/rest/Default/new_restExp/_get?num1=2&num2=4";
 $context = stream_context_create(array(
-'https' => array(
+'http' => array(
 
        'header'    => ['Content-type: application/json' , 'Accept: application/json', 'Authorization: Basic '.base64_encode("$username:$password")], 'method'    => 'POST)));
 
