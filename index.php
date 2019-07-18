@@ -28,9 +28,9 @@ $opts = array('http' =>
 
 $context = stream_context_create($opts);
 $jsonStr = file_get_contents($URL, false, $context);
-$obj = json_decode($jsonStr,true);
+$obj = json_decode($jsonStr);
 		    // $Status_MSG = $jsonStr;
-$Status_MSG = $jsonStr->{'num1'};
+$Status_MSG = $obj->{'num1'};
 // $Status_MSG = "Your Cognizant ID $LanID/boss has been validated. Thanks";
 
 		    	  break;
