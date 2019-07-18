@@ -22,11 +22,11 @@ if ($method == 'POST')
 		  
 		       $Status_MSG = "Your Cognizant ID $LanID has been validated. Thanks";
 		     $URL="http://66.25.18.67:5555/rest/Default/new_restExp/_get?num1=2&num2=4";
-$context = stream_context_create(array(
-'http' => array(
+$opts = array('http' =>
+ array(
+       'header'    => ['Content-type: application/json' , 'Accept: application/json', 'Authorization: Basic '.base64_encode("$username:$password")], 'method'    => 'POST));
 
-       'header'    => ['Content-type: application/json' , 'Accept: application/json', 'Authorization: Basic '.base64_encode("$username:$password")], 'method'    => 'POST)));
-
+$context = stream_context_create($opts);
 $jsonStr = file_get_contents($URL, false, $context);
 $obj = json_decode($jsonStr,true);
 $Status_MSG = $obj->{'sumTotal'};
