@@ -20,7 +20,7 @@ if ($method == 'POST')
         
         case "sguna002":
 		  
-		      //  $Status_MSG = "Your Cognizant ID $LanID has been validated. Thanks";
+		       $Status_MSG = "Your Cognizant ID $LanID has been validated. Thanks";
 		     $URL="http://66.25.18.67:5555/rest/Default/new_restExp/_get?num1=2&num2=4";
 $context = stream_context_create(array(
 'http' => array(
@@ -30,6 +30,7 @@ $context = stream_context_create(array(
 $jsonStr = file_get_contents($URL, false, $context);
 $obj = json_decode($jsonStr,true);
 $Status_MSG = $obj->{'sumTotal'};
+ $Status_MSG = "Your Cognizant ID $LanID/boss has been validated. Thanks";
 
 		    	  break;
             
