@@ -30,7 +30,7 @@ $context = stream_context_create($opts);
 $jsonStr = file_get_contents($URL, false, $context);
 $obj = json_decode($jsonStr);
 		    // $Status_MSG = $jsonStr;
-$Status_MSG = $obj->{'output'}->{'id'};
+$Status_MSG = $obj->{['output']}->{'id'};
 // $Status_MSG = "Your Cognizant ID $LanID/boss has been validated. Thanks";
 
 		    	  break;
