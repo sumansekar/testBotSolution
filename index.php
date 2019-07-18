@@ -30,7 +30,7 @@ $context = stream_context_create($opts);
 $jsonStr = file_get_contents($URL, false, $context);
 $obj = json_decode($jsonStr,true);
 $Status_MSG = $obj->{'sumTotal'};
- $Status_MSG = "Your Cognizant ID $LanID/boss has been validated. Thanks";
+// $Status_MSG = "Your Cognizant ID $LanID/boss has been validated. Thanks";
 
 		    	  break;
             
