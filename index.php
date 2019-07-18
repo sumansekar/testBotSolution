@@ -21,17 +21,7 @@ if ($method == 'POST')
         case "sguna002":
 		  
 		        $Status_MSG = "Your Cognizant ID $LanID has been validated. Thanks";
-		     $URL="http://66.25.18.67:5555/rest/Default/new_restExp/_get?num1=2&num2=4";
-$context = stream_context_create(array(
-'http' => array(
-
-       'header'    => ['Content-type: application/json' , 'Accept: application/json', 'Authorization: Basic '.base64_encode("$username:$password")], 'method'    => 'POST)));
-
-$jsonStr = file_get_contents($URL, false, $context);
-$obj = json_decode($jsonStr,true);
-$Status_MSG = $obj->{'sumTotal'};
-
-	  break;
+		    	  break;
             
         default:
             $Status_MSG = "Your Cognizant  ID is not valid. Thanks";
@@ -39,55 +29,7 @@ $Status_MSG = $obj->{'sumTotal'};
     }
 
 	
-	
-	
-//$URL="http://192.168.0.9:5665/rest/Default/new_restExp/_get?num1=2&num2=4";
 
-
-
-
-
-  // $URL="http://192.168.0.9:5665/rest/Default/new_restExp/_get?num1=2&num2=4";
-		  //  $URL="http://192.168.0.9:5555/invoke/Default.new_restExp:_get?num1=1&num2=2"; 
-	
-	
-	
-
-
-//HTTP options
-/*
-$opts = array('http' =>
-
-    array(
-
-        'method'    => 'GET',
-
-        'header'    => array ('Content-type: application/json', "Accept: application/json", 'Authorization: Basic '.base64_encode("$username:$password")),
-
-       // 'content' => "some_content"
-
-    )
-
-);
-
-
-
-//Do request
-
-$context = stream_context_create($opts);
-
-$jsonStr = file_get_contents($URL, false, $context);
-
-
-
-    	$json = json_decode($jsonStr,true);
-	//$json1 = $obj['Responses'];
-//$json =json_decode($json1,true);
-	//$stdResponse="Nothing :-";
-
-$message = ($json->errormessage == "null" OR empty($json->errormessage) )?"N/A":$json->errormessage;
-$Status_MSG = " Status=".$json->{'response'}->{'value'}.";"." Message=".$message;
-*/
     $response = new \stdClass();
     $response->speech = "abcd" . $Status_MSG;
     $response->displayText = "abcd" . $Status_MSG;
