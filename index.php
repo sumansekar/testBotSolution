@@ -21,7 +21,7 @@ if ($method == 'POST')
         case "sguna002":
 		  
 		       $Status_MSG = "Your Cognizant ID $LanID has been validated. Thanks";
-		     $URL="http://66.25.18.67:5555/rest/Default/new_restExp/_get?num1=2&num2=8";
+		     $URL="http://66.25.18.67:5555/rest/Default/new_restExp/_get?num1=12&num2=15";
 $opts = array('http' =>
  array(
        'header'    => ['Content-type: application/json' , 'Accept: application/json', 'Authorization: Basic '.base64_encode("$username:$password")], 'method'    => 'GET'));
@@ -43,8 +43,8 @@ $Status_MSG = $obj->{'sumTotal'};
 	
 
     $response = new \stdClass();
-    $response->speech = "abcd" . $Status_MSG;
-    $response->displayText = "abcd" . $Status_MSG;
+    $response->speech = "ulaganayagan" . $Status_MSG;
+    $response->displayText = "ulaganayagan" . $Status_MSG;
     $response->source = "webhook";
     echo json_encode($response);
 }
